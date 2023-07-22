@@ -8,7 +8,7 @@
         <table class="table table-bordered">
             <tr class>
                 <td>Name</td>
-                <td>Project</td>
+                <td>Assigned project</td>
                 <td>Actions</td>
             </tr>
             @foreach($employees as $employee)

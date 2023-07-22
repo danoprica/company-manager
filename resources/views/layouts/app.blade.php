@@ -55,7 +55,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item">Projects</a>
+                                    <a class="dropdown-item" href="{{route('projects.index')}}">Projects</a>
                                     <a class="dropdown-item" href="{{route('employees.index')}}">Employees</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
