@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +19,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/employees', [EmployeesController::class, 'index'])->name('employees.index');
+Route::get('/employees/createEmployee', [EmployeesController::class, 'createEmployee'])->name('employee.create');
+Route::delete('/employees/{employee}/deleteEmployee', [EmployeesController::class, 'deleteEmployee'])->name('employee.delete');
+
+
+
+
+
