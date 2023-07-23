@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employees;
+
 use App\Models\Projects;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\View;
 
 
 class ProjectsController extends Controller
 {
+
+    public object $projects;
+
+//    public function __construct(){
+//        $this->projects = Projects::all();
+//        View::share('projects', $this->projects);
+//    }
+
     public function index() {
-        $projects = Projects::all();
-        return view('projects\projects', ['projects' => $projects]);
+        return view('projects\projects');
     }
 
     public function createProject(){

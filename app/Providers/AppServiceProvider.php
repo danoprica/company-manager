@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Models\Employees;
+use App\Models\Projects;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,5 +22,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         //
+        view()->composer('*',function($view) {
+            $view->with('employees', Employees::all());
+            $view->with('projects', Projects::all());
+        });
     }
 }
