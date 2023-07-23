@@ -10,15 +10,15 @@
             @method('post')
             <div>
                 <label>Name: </label>
-                <input type="text" name="name"/>
+                <input value="{{$employee->name}}" type="text" name="name"/>
             </div>
             <br>
             <div>
                 <label>Assigned project: </label>
                 <select name="project_id">
-                    <option value="">Not assigned</option>
+                    <option value="" {{$employee->project_id == NULL ? 'selected' : ''}}>Not assigned</option>
                     @foreach($projects as $project)
-                    <option value="{{$project['id']}}"> {{$project['name']}} </option>
+                        <option value="{{$project['id']}}" {{$project->id == $employee->project_id ? 'selected' : ''}}> {{$project['name']}} </option>
                     @endforeach
                 </select>
             </div>

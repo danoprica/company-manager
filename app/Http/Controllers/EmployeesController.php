@@ -30,6 +30,10 @@ class EmployeesController extends Controller {
 
     }
 
+    public function editEmployee(Employees $employee){
+        return view('employees\editEmployee', ['employee' => $employee]);
+    }
+
     public function deleteEmployee(Employees $employee){
         $employee->delete();
         return redirect(route('employees.index'));

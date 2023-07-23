@@ -22,11 +22,15 @@
                     @endif
                 </td>
                 <td>
+                    <div>
                     <form method="post" action="{{route('employee.delete', ['employee' => $employee])}}">
                         @csrf
                         @method('delete')
                         <input type="submit" class="btn btn-danger" value="Delete"/>
+                        <a href="{{route('employee.edit', ['employee' => $employee])}}" type="button" class="btn btn-primary">Edit</a>
                     </form>
+                    </div>
+
                 </td>
             </tr>
             @endforeach
