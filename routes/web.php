@@ -33,4 +33,7 @@ Route::delete('/employees/{employee}/deleteEmployee', [EmployeesController::clas
 
 Route::get('/projects', [ProjectsController::class, 'index'])->name('projects.index');
 Route::get('/projects/createProject', [ProjectsController::class, 'createProject'])->name('project.create');
+Route::post('/projects/storeProject', [ProjectsController::class, 'storeProject'])->name('project.store');
+Route::get('/projects/{project}/editProject', [ProjectsController::class, 'editProject'])->name('project.edit');
+Route::put('/projects/{project}/updateProject', [ProjectsController::class, 'updateProject'])->name('project.update');
 Route::delete('/projects/{project}/deleteProject', [ProjectsController::class, 'deleteProject'])->name('project.delete');

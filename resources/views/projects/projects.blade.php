@@ -26,6 +26,7 @@
                             @csrf
                             @method('delete')
                             <input type="submit" class="btn btn-danger" value="Delete"/>
+                            <a href="{{route('project.edit', ['project' => $project])}}" type="button" class="btn btn-primary">Edit</a>
                         </form>
                     </td>
                 </tr>
