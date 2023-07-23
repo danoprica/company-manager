@@ -18,7 +18,14 @@
                     @if($employee['project_id'] === NULL)
                         Not assigned
                     @else
-                        {{$employee['project_id']}}
+                        @php
+                            $id = $employee['project_id'];
+                        @endphp
+                        @foreach($projects as $project)
+                            @if($id == $project['id'])
+                                {{$project['name']}}
+                            @endif
+                        @endforeach
                     @endif
                 </td>
                 <td>
