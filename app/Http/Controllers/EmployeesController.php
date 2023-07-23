@@ -34,6 +34,19 @@ class EmployeesController extends Controller {
         return view('employees\editEmployee', ['employee' => $employee]);
     }
 
+    public function updateEmployee(Employees $employee, Request $request){
+        if($request->project_id === ''){
+            $request->project_id = null;
+        };
+        $data = $request->validate([
+            'name' => 'required',
+            'project_id' => 'numeric|nullable',
+        ]);
+        $employee->update($data);
+
+        return redirect(route('employees.index'));
+    }
+
     public function deleteEmployee(Employees $employee){
         $employee->delete();
         return redirect(route('employees.index'));

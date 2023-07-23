@@ -15,7 +15,11 @@
                 <tr>
                     <td>{{$project['name']}}</td>
                     <td>
-                       Not assigned
+                       @foreach($employees as $employee)
+                            @if($employee->project_id == $project->id)
+                                {{$employee['name']}}
+                            @endif
+                       @endforeach
                     </td>
                     <td>
                         <form method="post" action="{{route('project.delete', ['project' => $project])}}">

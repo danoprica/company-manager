@@ -3,11 +3,11 @@
 @section('content')
     <div class="container">
         <br>
-        <h3>Add employee</h3>
+        <h3>Edit employee</h3>
         <br>
-        <form method="post" action="{{route('employee.store')}}">
+        <form method="post" action="{{route('employee.update', ['employee' => $employee])}}">
             @csrf
-            @method('post')
+            @method('put')
             <div>
                 <label>Name: </label>
                 <input value="{{$employee->name}}" type="text" name="name"/>
@@ -24,7 +24,7 @@
             </div>
             <br>
             <div>
-                <input type="submit" value="Add employee">
+                <input type="submit" value="Edit">
             </div>
         </form>
     </div>
