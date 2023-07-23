@@ -9,13 +9,6 @@ use Illuminate\Support\Facades\View;
 class EmployeesController extends Controller {
 
 
-    public object $employees;
-
-//    public function __construct(){
-//        $this->employees = Employees::all();
-//        View::share('employees', $this->employees);
-//    }
-
     public function index() {
         return view('employees\employees');
     }
