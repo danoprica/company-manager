@@ -16,7 +16,7 @@
             <div>
                 <label>Assigned project: </label>
                 <select name="project_id">
-                    <option value="(NULL)">Not assigned</option>
+                    <option value="">Not assigned</option>
                     @foreach($projects as $project)
                     <option value="{{$project['id']}}"> {{$project['name']}} </option>
                     @endforeach

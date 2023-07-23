@@ -18,13 +18,14 @@ class EmployeesController extends Controller {
     }
 
     public function storeEmployee(Request $request){
+        if($request->project_id === ''){
+            $request->project_id = null;
+        };
         $data = $request->validate([
             'name' => 'required',
-            'project_id' => 'required|numeric',
+            'project_id' => 'numeric|nullable',
         ]);
         $newEmployee = Employees::create($data);
-//        $newEmployee->user_id = Auth::user()->id;
-//        $newEmployee->save();
         return view('employees\employees');
 
     }
