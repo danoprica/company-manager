@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //Initialize global employees and projects objects
+        //Initialize global employees and projects object arrays
         //Can be used in all controllers and views
 
         view()->composer('*',function($view) {

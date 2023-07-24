@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+//Employees routes
 Route::get('/employees', [EmployeesController::class, 'index'])->name('employees.index');
 Route::get('/employees/createEmployee', [EmployeesController::class, 'createEmployee'])->name('employee.create');
 Route::post('/employees/storeEmployee', [EmployeesController::class, 'storeEmployee'])->name('employee.store');
@@ -30,7 +31,7 @@ Route::put('/employees/{employee}/updateEmployee', [EmployeesController::class, 
 Route::delete('/employees/{employee}/deleteEmployee', [EmployeesController::class, 'deleteEmployee'])->name('employee.delete');
 
 
-
+//Projects routes
 Route::get('/projects', [ProjectsController::class, 'index'])->name('projects.index');
 Route::get('/projects/createProject', [ProjectsController::class, 'createProject'])->name('project.create');
 Route::post('/projects/storeProject', [ProjectsController::class, 'storeProject'])->name('project.store');
