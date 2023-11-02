@@ -14,5 +14,10 @@ php artisan migrate
 
 php artisan key:generate
 
+Run in 2 separate terminals:
+
+php artisan serve
+
+npm run dev
 
 
